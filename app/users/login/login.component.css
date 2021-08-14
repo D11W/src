@@ -1,0 +1,53 @@
+/* body{
+    background-image: url(E:\BlueScript\Header-Footer\src\assets\123.jpg);
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+} */
+/* .bodyContent{
+    background-image: url(assets/123.jpg);
+} */
+label{
+    color: #fff;
+}
+body:before{
+position: absolute;
+content: '';
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+background: rgba(0,0,0,0.7);
+}
+.bt1{
+background-color:#00ccff;
+background-color:#00e6ac;
+color:#fff;
+
+}
+.content{
+position: absolute;
+z-index: 999;
+padding: 40px 30px;
+background: rgba(0, 0, 0, 0.37);
+box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.9);
+}
+.card{
+    box-shadow:5px 5px 20px rgba(0, 0, 0, 0.13)
+}
+.forget:hover{
+    text-decoration:underline;
+}
+.create:hover{
+    text-decoration:underline;
+
+}
+li{
+    color: #fff;
+    margin-bottom:30px;
+}
+.content1{
+position: relative;}
+/* .content2{
+backgr
+} */

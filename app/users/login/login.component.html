@@ -1,0 +1,61 @@
+<div style="padding-bottom:14%;background: url(assets/123.jpg);background-repeat:no-repeat;background-attachment: fixed;background-size:100% 100%" class="bodyContent">
+    <div class="container">
+        <form #user="ngForm" (ngSubmit)="authenticate(user.value)" class="sign-up-form">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="content1">
+                    <p class="fs-1 " style="color: #fff;z-index:22;margin-top:100px;margin-bottom:20px;color:#00e6ac;">GST AUTOMATION</p>
+                    
+                        <ul>
+                        <li>Lorem ipsum dolor, sequi labore accusantium obcaecati maiores repudiandae iste.</li>
+                        <li>Lorem ipsum dolor, sequi labore accusantium obcaecati maiores repudiandae iste.</li>
+                        <li>Lorem ipsum dolor, sequi labore accusantium obcaecati maiores repudiandae iste.</li>
+                        <li>Lorem ipsum dolor, sequi labore accusantium obcaecati maiores repudiandae iste.</li>
+                        <li>Lorem ipsum dolor, sequi labore accusantium obcaecati maiores repudiandae iste.</li>
+                    </ul>
+                
+                </div>
+                
+            </div>
+            <div class="col-md-6">
+                    <div style="margin-top: 0px;" class="container ">
+                   
+                        <div  style="width: 25%; margin-top: 40px;" class="position-absolute top-50 end-0 translate-middle content card">
+                            <div align="center" style="color: white;" class="card-header rounded-bottom fs-3">
+                                User Login
+                            </div>
+                            <div style="margin-top: 10px;"class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12 mb-3">
+                                        <label for="username" class="form-label">Username or Email</label>
+                                        <input type="text" style="font-size:14px;" name="userName" id="username" class="form-control" ngModel placeholder="Username or Email">
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label for="password" class="form-label">Password</label>
+                                            <input style="font-size:14px;" type="password"  name="password" id="password" class="form-control" ngModel placeholder="Password">
+                                        </div>
+                                        <div align="left" class="col-md-12">
+                                            <a style="text-decoration:none;color: white;" (click)="forgetPassword()"><small class="forget">forgot password?</small></a>
+                                        </div>
+                                        <div align="center" class="col-md-12 mt-3">
+                                            <button style="width: 100%;border-radius: 20px;" type="submit"  class="btn bt1">Sign in</button>
+                                        </div>
+                                       <div style="margin-top:30px" align="center" class="col-md-12">
+                                           <p style="color: white;" class="fs-5">-OR-</p>
+                                       </div>
+                                </div>
+                                <div class="row">
+                                    <div align="center" style="margin-top:20px" class="col-md-12">
+                                        <p style="color: white;">New here!<span class="create" style="margin-left:10px"><a routerLink="register" style="text-decoration:none;" (click)="navigate()">Create Account</a> </span></p>
+                                    </div>
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    
+        
+    </form>
+    </div>
+   </div>

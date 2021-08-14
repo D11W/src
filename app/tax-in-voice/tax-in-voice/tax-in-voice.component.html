@@ -1,0 +1,622 @@
+<!-- <div class="container"> -->
+    <form #tax="ngForm" (ngSubmit)="SubmitDetail(tax.value)">
+        <div class="header">
+         <p class="fs-1">Tax Invoice </p>
+        </div>
+     
+        <div class="container-fluid" style="margin-top: 10px;">
+         <nav>
+             <div class="nav nav-tabs" id="nav-tab" role="tablist">
+               <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#section1" type="button" role="tab" aria-controls="nav-home" aria-selected="true" style="padding-left: 50px; padding-right: 50px; background-color: lavender; margin-right: 4px;">  Generate Invoice</button>
+               <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#section2" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" style="padding-left: 60px; padding-right: 50px; background-color: lavender;" > Search Invoice</button>     
+             </div>
+         </nav>
+     
+         <div class="tab-content" id="nav-tabContent">
+         <!-- <div style="margin-top:2%;width: 50%;" class="row">
+             <div class="col-md-4">
+                 <div class="card"><a style="text-decoration:none;color: black;" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" >
+                     <div class="card-body">
+                         <div class="row">
+                             <div align="center" style="margin-left:0px;font-size:22px ;" class="col-md-4">
+                                 <i class="far fa-edit"></i>
+                             </div>
+                             <div align="left" style="margin-top: 5px;margin-left: -15px;" class="col-md-8">
+                                 Generate Invoice
+                                
+                             </div>
+                         </div>
+                     </div>
+                 </a>
+                   </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="card"><a style="text-decoration:none;color: black;" data-bs-toggle="collapse" href="#search" role="button" aria-expanded="false" aria-controls="collapseExample" >
+                     <div class="card-body">
+                         <div class="row">
+                             <div align="center" style="margin-left:0px;font-size:22px ;" class="col-md-4">
+                                 <i class="far fa-edit"></i>
+                             </div>
+                             <div align="left" style="margin-top: 5px;margin-left: -15px;" class="col-md-8">
+                                 Search Invoice
+                             </div>
+                         </div>
+                     </div>
+                 </a>
+             </div>
+             </div>
+         </div> -->
+           <div style="margin-top:16px ;" class="collapse active" id="section1">
+             <div  class="card card-body">
+                 <!-- <div class="row mb-5">
+                     <div style="margin-top: 15px;" class="col-md-10">
+                         <p class="fs-4">
+                             Company Details:
+                             </p>
+                     </div>
+                     <div class="col-md-2">
+                         <label for="" class="form-label">Logo</label>
+                         <input type="file" style="width:105px" class="form-control">
+                     </div>
+                 </div> -->
+                     <!-- <div class="row">
+                                 
+                                 <div class="col-md-3">
+                                     <label for="company" class="form-label">Company Name</label>
+                                     <input type="text" class="form-control" id="company" placeholder="Company Name">
+                                 </div>
+                                 <div class="col-md-2">
+                                     <label for="line1" class="form-label">Line1</label>
+                                     <input type="text" class="form-control" placeholder="Line1 for address"/>
+                                     </div>
+                                 <div class="col-md-2">
+                                     <label for="line2" class="form-label">Line2</label>
+                                     <input type="text" class="form-control" placeholder="line2 for address"/>
+                                 </div>
+                                     
+                                 <div class="col-md-2">
+                                 <label for="city" class="form-label">City</label>
+                                 <input type="text" class="form-control" placeholder="Enter Your City"/>
+                                 </div>
+                                 <div class="col-md-2">
+                                     <label for="Pin" class="form-label">Pin Code</label>
+                                     <input type="text" class="form-control" placeholder="Enter your Pin" />
+                                 </div>
+                            
+                        
+                     </div>
+                     <div class="row">
+                              <p class="mt-3">Address</p> -->
+                         <!-- <div class="col-md-3 mb-3 mt-3">
+                             <label for="state" class="form-label">State</label>
+                             <input type="text" class="form-control" placeholder="Enter your State" />
+                         </div>
+                         <div class="col-md-2 mt-3">
+                             <label for="gst" class="form-label">GSTIN/GSTUIN</label>
+                            <input id="gst" type="text" class="form-control" placeholder="Enter the GST">
+                         </div>
+                          <div class="col-md-2 mt-3">
+                            <label for="Email" class="form-label">E-mail Address</label>
+                            <input type="email" class="form-control" placeholder="Enter your email address">
+                         </div> -->
+                         <!-- <div style="visibility: hidden" class="col-md-3 mt-5" >
+                             <button class="btn btn-primary">
+                         Edit & Save
+                             </button>
+                         </div>
+                         <div class="col-md-2 mt-5" >
+                             <button class="btn btn-primary">
+                         Edit & Save
+                             </button>
+                         </div> -->
+                         
+                     <!-- </div>
+                <div class="col-md-12 container-fluid mt-3 mb-3">
+                    <hr>
+                </div> -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="fs-4">
+                            Client Details:
+                        </p>
+                    </div>
+                     <div class="container-fluid row">
+                         <div class="col-md-3">
+                             <label for="companyName" class="form-label">Company Name</label>
+                             <div class="input-group">
+                                 <input type="text" ngModel name="companyName" id="companyName" class="form-control" aria-label="Text input with segmented dropdown button">
+                                 <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                   <span class="visually-hidden">Toggle Dropdown</span>
+                                 </button>
+                                 <ul class="dropdown-menu dropdown-menu-end">
+                                   <li><a class="dropdown-item" href="#">Company1</a></li>
+                                   <li><a class="dropdown-item" href="#">Company2</a></li>
+                                   <li><a class="dropdown-item" href="#">company3</a></li>
+                                 </ul>
+                               </div>
+                         
+                         </div>
+                         <div class="col-md-2">
+                             <label for="line1" class="form-label">Line1</label>
+                             <input type="text" class="form-control" ngModel name="line1" id="line1" placeholder="Line1 for address"/>
+                             </div>
+                         <div class="col-md-2">
+                             <label for="line2" class="form-label">Line2</label>
+                             <input type="text" class="form-control" ngModel name="line2" id="line2" placeholder="line2 for address"/>
+                         </div>
+                             
+                         <div class="col-md-2">
+                         <label for="city" class="form-label">City</label>
+                         <input type="text" class="form-control" ngModel name="city" id="city" placeholder="Enter Your City"/>
+                         </div>
+                         <div class="col-md-2">
+                             <label for="Pin" class="form-label">Pin Code</label>
+                             <input type="text" class="form-control" ngModel name="pincode" id="Pin" placeholder="Enter your Pin" />
+                         </div>
+                     </div>
+                     <div class="row">
+                         <!-- <p class="mt-3">Address</p> -->
+                     <div class="col-md-3 mb-3 mt-3">
+                         <label for="state" class="form-label">State</label>
+                         <input type="text" class="form-control" ngModel name="state" id="state" placeholder="Enter your State" />
+                     </div>
+                     <div class="col-md-2 mt-3">
+                         <label for="gst" class="form-label">GSTIN/GSTUIN</label>
+                        <input id="gst" type="text" class="form-control" ngModel name="gstUIN" id="gst" placeholder="Enter the GST">
+                     </div>
+                      <div class="col-md-2 mt-3">
+                        <label for="Email" class="form-label">E-mail Address</label>
+                        <input type="email" class="form-control" ngModel name="email" id="email" placeholder="Enter your email address">
+                     </div>
+                     <!-- <div style="visibility: hidden" class="col-md-3 mt-5" >
+                         <button class="btn btn-primary">
+                     Edit & Save
+                         </button>
+                     </div>
+                     <div class="col-md-2 mt-5" >
+                         <button class="btn btn-primary">
+                     Edit & Save
+                         </button>
+                     </div> -->
+                 </div>
+                     <div class="col-md-12 container mt-3 mb-3">
+                         <hr style="height: 2px;margin-left:10px;">
+                     </div>
+                     <div class="col-md-3 mt-3 mb-3">
+                         <label for="Invoice" class="form-label">Invoice No.</label>
+                         <input type="number" class="form-control in1" ngModel name="invoiceNo" id="invoice" placeholder="Enter Invoice Number">
+                     </div>
+                     <div class="col-md-3 mt-3 mb-3">
+                      <label for="Invoice" class="form-label">Delivery Note</label>
+                      <input type="text" class="form-control in1" ngModel name="deliveryNote" id="deliveryNumber" placeholder="Delivery Note">
+                  </div>
+                  <div class="col-md-3 mt-3 mb-3">
+                      <label for="Invoice" class="form-label">Supplier's Ref</label>
+                      <input type="text" class="form-control in1" ngModel name="suppliersRef" id="supplierRef" placeholder="Supplier's Reference">
+                  </div>
+                  <div class="col-md-3 mt-3 mb-3">
+                      <label for="Invoice" class="form-label">Buyer's Order No.</label>
+                      <input type="text" class="form-control in1" ngModel name="buyerNumber" id="buyerNumber" placeholder="Buyer's Order Number">
+                  </div>
+                  <div class="col-md-3 mt-3 mb-3">
+                     <label for="Invoice" class="form-label">Despatch Document No.</label>
+                     <input type="text" class="form-control in1" ngModel name="despatchDocumentNo" id="despatchNumber" placeholder="Despatch Document Number">
+                 </div>
+                 <div class="col-md-3 mt-3 mb-3">
+                  <label for="Invoice" class="form-label">Despatch Through</label>
+                  <input type="text" class="form-control in1" ngModel name="despatchThrough" id="despatchThrough" placeholder="Despatch Through">
+              </div>
+              <div class="col-md-3 mt-3 mb-3">
+                  <label for="Invoice" class="form-label">Dated</label>
+                  <input type="date" class="form-control in1" ngModel name="dated" id="dated">
+              </div>
+              <div class="col-md-3 mt-3 mb-3">
+                  <label for="Invoice" class="form-label">Mode/Terms of Payment</label>
+                 <select name="mode" style="width:220px" class="form-select" ngModel  id="mode">
+                     <option selected></option>
+                     <option value="1">Cash</option>
+                     <option value="2">Debit/Credit Card</option>
+                     <option value="3">Net Banking</option>
+                     <option value="4">UPI Id</option>
+                     <!-- <option value="4">UPI Id</option> -->
+                 </select>
+                 </div>
+                 <div class="col-md-3 mt-3 mb-3">
+                     <label for="ref" class="form-label">Other References</label>
+                     <input type="text" id="ref" class="form-control in1" ngModel name="reference" placeholder="References" >
+                 </div>
+                 <div class="col-md-3 mt-3 mb-3">
+                     <label for="referdate" class="form-label">Reference Date</label>
+                     <input type="referdate" class="form-control in1" ngModel name="referdate" id="referdate">
+                 </div>
+                 <div class="col-md-3 mt-3 mb-3">
+                     <label for="deliveryNoteDate" class="form-label">Delivery Note Date</label>
+                     <input type="deliveryNoteDate" class="form-control in1" ngModel name="deliveryNoteDate" id="deliveryNoteDate">
+                 </div>   
+                 <div class="col-md-3 mt-3 mb-3">
+                     <label for="Destination" class="form-label">Destination</label>
+                     <input type="text" class="form-control in1" placeholder="Destination" ngModel name="destination" id="destination">
+                 </div> 
+                 <div class="row mt-5">
+                   <div align="right" class="col-md-12 mb-3">
+                       <button href="" style="width:150px" type="submit" class="btn bt1">Save</button>
+                   </div>
+               </div>
+                </div>
+                <div class="mt-5 mb-5 container-fluid">
+                 <table class="table ">
+                     <thead>
+                       <tr>
+                         <th rowspan="2" scope="col">Sr.No</th>
+                         <th rowspan="2" scope="col">Description of Goods/Services</th>
+                         <th rowspan="2" scope="col">HSN/SAC</th>
+                         <th rowspan="2" scope="col">Quantity</th>
+                         <th rowspan="2" scope="col">Amount</th>
+                         <th colspan="2" style="text-align:center" scope="col">CGST</th>
+                         <th colspan="2" style="text-align:center" scope="col">SGST</th>
+                         <th colspan="2" style="text-align:center" scope="col">IGST</th>
+                         <th rowspan="2" style="text-align:center" scope="col"></th>
+                       </tr>
+                       <tr>
+                         <th>Rate</th>
+                         <th>Amount</th>
+                         <th>Rate</th>
+                         <th>Amount</th>
+                         <th>Rate</th>
+                         <th>Amount</th>
+     
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr style="margin-bottom: 30px;">
+                         <th scope="row">1</th>
+                         <td >
+                             <input style="height: 30px;width: 400px;" type="text" class="form-control">
+                         </td>
+                         <td>
+                             <input style="height: 30px;width: 80px;" type="text" class="form-control">
+                         </td>
+                         <td>
+                             <input style="height: 30px;width: 90px;" type="text" class="form-control">
+                         </td>
+                         <td>
+                             <input style="height: 30px;width: 70px;" type="text" class="form-control">
+                         </td>
+                         <td>
+                             <input style="height: 30px;width: 40px;" type="text" class="form-control">
+                         </td>
+                         <td>
+                             <input style="height: 30px;width: 70px;" type="text" class="form-control">
+                         </td>
+                         <td>
+                             <input style="height: 30px;width: 40px;" type="text" class="form-control">
+                         </td>
+                         <td>
+                             <input style="height: 30px;width: 70px;" type="text" class="form-control">
+                         </td>
+                         <td>
+                             <input style="height: 30px;width: 40px;" type="text" class="form-control">
+                         </td>   
+                         <td>
+                             <input style="height: 30px;width: 70px;" type="text" class="form-control">
+                         </td>
+                         <td>
+                             <button class="btn btn-success">
+                                 +
+                             </button>
+                         </td>
+                       </tr>
+                       <tr>
+                           <td></td>
+                           <td style="text-align:right;" >Total Amount</td>
+                           <td></td>
+                           <td></td>
+                           <td>
+                             <input style="height: 30px;width: 70px;" type="text" class="form-control">
+                           </td>
+                           <td></td>
+                           <td>
+                             <input style="height: 30px;width: 70px;" type="text" class="form-control">
+                           </td>
+                           <td></td>
+                           <td>
+                             <input style="height: 30px;width: 70px;" type="text" class="form-control">
+                           </td>
+                           <td></td>
+                           <td>
+                             <input style="height: 30px;width: 70px;" type="text" class="form-control">
+                           </td>
+                           <td></td>
+                       </tr>
+                       <tr>
+                         <td></td>
+                         <td></td>
+                         <td></td>
+                         <td></td>
+                         <td></td>
+                         <td></td>
+                         <td></td>
+                         <td></td>
+                         <td></td>
+                         <td></td>
+                         <td>Grand Total:</td>
+                         <td>
+                             <input style="height: 30px;width: 70px;" type="text" class="form-control">
+                         </td>
+                     </tr>
+                     </tbody>
+                   </table>
+                </div> 
+                <div class="container-fluid mt-5">
+                 <div class="row mb-5">
+                     <div class="col-md-12">
+                         <p class="fs-4">
+                            Company's Bank Details
+                         </p>
+                     </div>
+                     <div class="col-md-3">
+                         <label for="" class="form-label">Bank Name</label>
+                         <input type="text" class="form-control" ngModel name="company" id="company" placeholder="Enter Bank Name">
+                     </div>
+                     <div class="col-md-3">
+                         <label for="" class="form-label">Account Number</label>
+                         <input type="text" class="form-control" ngModel name="company" id="company" placeholder="Enter Account Number">
+                     </div>
+                     <div class="col-md-3">
+                         <label for="" class="form-label">Branch</label>
+                         <input type="text" class="form-control" ngModel name="company" id="company" placeholder="Enter Branch Name">
+                     </div>
+                     <div class="col-md-3">
+                         <label for="" class="form-label">IFSC Code</label>
+                         <input type="text" class="form-control" ngModel name="company" id="company" placeholder="Enter IFSC code">
+                     </div>
+                 </div>
+                 <div class="row">
+                     <div class="col-md-4">
+                         <label for="floatingTextarea">Terms &Conditions</label>
+                         <textarea class="form-control" placeholder="" id="floatingTextarea">We declare that this invoice shows the actual price of the goods  described and that all particulars are true and corrects</textarea>
+                     </div>
+                 </div>
+                </div>
+             </div>
+           </div>
+           <div style="margin-top:16px ;" class="collapse" id="section2">
+               <div class="card card-body">
+                 <div style="height: 100%;" class="d-flex align-items-start">
+                     <div style="width: 300px;height: 100%;" class="nav flex-column nav-tabs me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                       <label for="search1" style="margin-left: 5px;" class="label-fom fs-5">Search Invoice</label>
+                       <input style="margin-top:5px;margin-left: 10px;width: 280px;font-size: 12px;" type="text" id="search1" class="form-control mb-3" placeholder="Enter Client Name / Date / Invoice No.">
+                       <button class="nav-link side12 active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                     <!-- <a style="text-decoration:none;color: black;" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" > -->
+                           <div class="row">
+                               <div align="center" style="margin-left:-10px;font-size:20px;margin-top: 15px;color: aquamarine;" class="col-md-4">
+                                 <i class="fas fa-user-circle fa-2x"></i>
+                               </div>
+                               <div align="center" style="margin-left:-50px;letter-spacing: 0.2px;" class="col-md-8">
+                                 <div class="row">
+                                   <div  style="font-size: 14px; margin-bottom:5px" class="col-md-12">
+                                     <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">To:</span>Client Name1
+                                   </div>
+                                   <div style="font-size: 14px; margin-bottom:5px"  class="col-md-12">
+                                    <span class="span12" style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">Invoice No:</span>123
+                                         </div>
+                                 </div>
+                                 <div  style="font-size: 14px; margin-bottom:5px" class="col-md-12">
+                                   <span class="span12" style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">Date</span>:01/02/2021
+                                        </div>
+                                </div>
+                               </div>
+                   <!-- </a> -->
+                       </button>
+                       <button class="nav-link side12" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                         <!-- <a style="text-decoration:none;color: black;" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" > -->
+                               <div class="row">
+                                   <div align="center" style="margin-left:-10px;font-size:20px;margin-top: 15px;color:cadetblue;" class="col-md-4">
+                                     <i class="fas fa-user-circle fa-2x"></i>
+                                   </div>
+                                   <div align="center" style="margin-left:-50px" class="col-md-8">
+                                     <div class="row">
+                                       <div  style="font-size: 14px; margin-bottom:5px" class="col-md-12">
+                                         <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">To:</span>Client Name1
+                                       </div>
+                                       <div style="font-size: 14px; margin-bottom:5px"  class="col-md-12">
+                                        <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">Invoice No:</span>123
+                                             </div>
+                                     </div>
+                                     <div  style="font-size: 14px; margin-bottom:5px" class="col-md-12">
+                                       <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">Date</span>:01/02/2021
+                                            </div>
+                                    </div>
+                                   </div>
+                       <!-- </a> -->
+                       </button>
+                       <button class="nav-link side12" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                         <!-- <a style="text-decoration:none;color: black;" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" > -->
+                               <div class="row">
+                                   <div align="center" style="margin-left:-10px;font-size:20px;margin-top: 15px;color:cornflowerblue;" class="col-md-4">
+                                     <i class="fas fa-user-circle fa-2x"></i>
+                                   </div>
+                                   <div align="center" style="margin-left:-50px" class="col-md-8">
+                                     <div class="row">
+                                       <div  style="font-size: 14px; margin-bottom:5px" class="col-md-12">
+                                         <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">To:</span>Client Name1
+                                       </div>
+                                       <div style="font-size: 14px; margin-bottom:5px"  class="col-md-12">
+                                        <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">Invoice No:</span>123
+                                             </div>
+                                     </div>
+                                     <div  style="font-size: 14px; margin-bottom:5px" class="col-md-12">
+                                       <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">Date</span>:01/02/2021
+                                            </div>
+                                    </div>
+                                   </div>
+                       <!-- </a> -->
+                       </button>
+                       <button class="nav-link side12" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                         <!-- <a style="text-decoration:none;color: black;" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" > -->
+                               <div class="row">
+                                   <div align="center" style="margin-left:-10px;font-size:20px;margin-top: 15px;color:darkseagreen" class="col-md-4">
+                                     <i class="fas fa-user-circle fa-2x"></i>
+                                   </div>
+                                   <div align="center" style="margin-left:-50px" class="col-md-8">
+                                     <div class="row">
+                                       <div  style="font-size: 14px; margin-bottom:5px" class="col-md-12">
+                                         <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">To:</span>Client Name1
+                                       </div>
+                                       <div style="font-size: 14px; margin-bottom:5px"  class="col-md-12">
+                                        <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">Invoice No:</span>123
+                                             </div>
+                                     </div>
+                                     <div  style="font-size: 14px; margin-bottom:5px" class="col-md-12">
+                                       <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">Date</span>:01/02/2021
+                                            </div>
+                                    </div>
+                                   </div>
+                       <!-- </a> -->
+                       </button>
+                       <button class="nav-link side12" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                         <!-- <a style="text-decoration:none;color: black;" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" > -->
+                               <div class="row">
+                                   <div align="center" style="margin-left:-10px;font-size:20px;margin-top: 15px;color: aquamarine;" class="col-md-4">
+                                     <i class="fas fa-user-circle fa-2x"></i>
+                                   </div>
+                                   <div align="center" style="margin-left:-50px" class="col-md-8">
+                                     <div class="row">
+                                       <div  style="font-size: 14px; margin-bottom:5px" class="col-md-12">
+                                         <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">To:</span>Client Name1
+                                       </div>
+                                       <div style="font-size: 14px; margin-bottom:5px"  class="col-md-12">
+                                        <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">Invoice No:</span>123
+                                             </div>
+                                     </div>
+                                     <div  style="font-size: 14px; margin-bottom:5px" class="col-md-12">
+                                       <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">Date</span>:01/02/2021
+                                            </div>
+                                    </div>
+                                   </div>
+                       <!-- </a> -->
+                       </button>
+                       <button class="nav-link side12" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                         <!-- <a style="text-decoration:none;color: black;" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" > -->
+                               <div class="row">
+                                   <div align="center" style="margin-left:-10px;font-size:20px;margin-top: 15px;color: rgb(217, 255, 127);" class="col-md-4">
+                                     <i class="fas fa-user-circle fa-2x"></i>
+                                   </div>
+                                   <div align="center" style="margin-left:-50px" class="col-md-8">
+                                     <div class="row">
+                                       <div  style="font-size: 14px; margin-bottom:5px" class="col-md-12">
+                                         <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">To:</span>Client Name1
+                                       </div>
+                                       <div style="font-size: 14px; margin-bottom:5px"  class="col-md-12">
+                                        <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">Invoice No:</span>123
+                                             </div>
+                                     </div>
+                                     <div  style="font-size: 14px; margin-bottom:5px" class="col-md-12">
+                                       <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">Date</span>:01/02/2021
+                                            </div>
+                                    </div>
+                                   </div>
+                       <!-- </a> -->
+                       </button>
+                       <button class="nav-link side12" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                         <!-- <a style="text-decoration:none;color: black;" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" > -->
+                               <div class="row">
+                                   <div align="center" style="margin-left:-10px;font-size:20px;margin-top: 15px;color: rgb(127, 236, 255);" class="col-md-4">
+                                     <i class="fas fa-user-circle fa-2x"></i>
+                                   </div>
+                                   <div align="center" style="margin-left:-50px" class="col-md-8">
+                                     <div class="row">
+                                       <div  style="font-size: 14px; margin-bottom:5px" class="col-md-12">
+                                         <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">To:</span>Client Name1
+                                       </div>
+                                       <div style="font-size: 14px; margin-bottom:5px"  class="col-md-12">
+                                        <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">Invoice No:</span>123
+                                             </div>
+                                     </div>
+                                     <div  style="font-size: 14px; margin-bottom:5px" class="col-md-12">
+                                       <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">Date</span>:01/02/2021
+                                            </div>
+                                    </div>
+                                   </div>
+                       <!-- </a> -->
+                       </button>
+                       <button class="nav-link side12" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                         <!-- <a style="text-decoration:none;color: black;" data-bs-toggle="collapse" href="# " role="button" aria-expanded="false" aria-controls="collapseExample" > -->
+                               <div class="row">
+                                   <div align="center" style="margin-left:-10px;font-size:20px;margin-top: 15px;color: rgb(255, 127, 127);" class="col-md-4">
+                                     <i class="fas fa-user-circle fa-2x"></i>
+                                   </div>
+                                   <div align="center" style="margin-left:-50px" class="col-md-8">
+                                     <div class="row">
+                                       <div  style="font-size: 14px; margin-bottom:5px" class="col-md-12">
+                                         <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">To:</span>Client Name1
+                                       </div>
+                                       <div style="font-size: 14px; margin-bottom:5px"  class="col-md-12">
+                                        <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">Invoice No:</span>123
+                                             </div>
+                                     </div>
+                                     <div  style="font-size: 14px; margin-bottom:5px" class="col-md-12">
+                                       <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">Date</span>:01/02/2021
+                                            </div>
+                                    </div>
+                                   </div>
+                       <!-- </a> -->
+                       </button>
+                       <button class="nav-link side12" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                         <!-- <a style="text-decoration:none;color: black;" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" > -->
+                               <div class="row">
+                                   <div align="center" style="margin-left:-10px;font-size:20px;margin-top: 15px;color: rgb(178, 255, 127);" class="col-md-4">
+                                     <i class="fas fa-user-circle fa-2x"></i>
+                                   </div>
+                                   <div align="center" style="margin-left:-50px" class="col-md-8">
+                                     <div class="row">
+                                       <div  style="font-size: 14px; margin-bottom:5px" class="col-md-12">
+                                         <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">To:</span>Client Name1
+                                       </div>
+                                       <div style="font-size: 14px; margin-bottom:5px"  class="col-md-12">
+                                        <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">Invoice No:</span>123
+                                             </div>
+                                     </div>
+                                     <div  style="font-size: 14px; margin-bottom:5px" class="col-md-12">
+                                       <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">Date</span>:01/02/2021
+                                            </div>
+                                    </div>
+                                   </div>
+                       <!-- </a> -->
+                       </button>
+                       <button class="nav-link side12 " id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                         <!-- <a style="text-decoration:none;color: black;" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" > -->
+                               <div class="row">
+                                   <div align="center" style="margin-left:-10px;font-size:20px;margin-top: 15px;color: rgb(127, 240, 255);" class="col-md-4">
+                                     <i class="fas fa-user-circle fa-2x"></i>
+                                   </div>
+                                   <div align="center" style="margin-left:-50px" class="col-md-8">
+                                     <div class="row">
+                                       <div  style="font-size: 14px; margin-bottom:5px" class="col-md-12">
+                                         <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">To:</span>Client Name1
+                                       </div>
+                                       <div style="font-size: 14px; margin-bottom:5px"  class="col-md-12">
+                                        <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">Invoice No:</span>123
+                                             </div>
+                                     </div>
+                                     <div  style="font-size: 14px; margin-bottom:5px" class="col-md-12">
+                                       <span style="font-weight:bold;margin-right: 10px;font-size: 14px; margin-bottom:5px">Date</span>:01/02/2021
+                                            </div>
+                                    </div>
+                                   </div>
+                       <!-- </a> -->
+                       </button>
+                     </div>
+                     <div class="tab-content" id="v-pills-tabContent">
+                       <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
+                       <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+                       <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+                       <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+                     </div>
+                   </div>
+               </div>
+           </div>
+           </div>
+     </div>
+        </form> 
+     <!-- </div> -->

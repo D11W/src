@@ -1,0 +1,28 @@
+li a i{
+    float: right;
+    margin-right:20px;
+    display:flex;
+    justify-content:center;
+    padding:1px;
+}
+li a i:hover{
+    color:rgb(224, 24, 24);
+}
+ul{
+    display:flex;
+    padding-top:10px;
+}
+.icons{
+    display:flex;
+}
+.main-content{
+    display:flex;
+    justify-content:center;
+    background-color: lightgray;
+    padding: 10px;
+}
+footer{
+    position:relative;
+    width:100%;
+    bottom: 0px;
+}

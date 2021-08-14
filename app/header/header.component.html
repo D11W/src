@@ -1,0 +1,49 @@
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="gst.jpg" alt="" width="90" height="45" class="d-inline-block align-text-top">
+              </a>
+              <a class="navbar-brand" href="#">
+                GST Automation
+            </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" routerLink="auth/changepassword">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " routerLink="tax/taxInVoice">TaxInVoice </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " routerLink="client/client">Client</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " routerLink="client/clientList">AllClient</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " routerLink="taxInVoiceList">AllTaxInVoice</a>
+              </li>
+              
+              <li *ngIf="http.Role=='USER'" class="nav-item">
+                <a class="nav-link " routerLink="auth/forgot">Component 3</a>
+              </li>
+              <li  *ngIf="http.Role==null" class="nav-item">
+                <a class="nav-link " routerLink="auth/login">Login</a>
+              </li> 
+              
+              <li  *ngIf="http.token!=null" class="nav-item">
+                <a class="nav-link " routerLink="auth/login" (click)="logout()">Logout</a>
+              </li> 
+             
+              <!-- <li class="nav-item" *ngIf="http.Role=='USER'"><a style="text-decoration:none" (click)="logout()" routerLink="login">Log Out</a></li> -->
+            </ul>
+           
+          </div>
+        </div>
+      </nav>  
+     

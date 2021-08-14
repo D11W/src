@@ -1,0 +1,23 @@
+
+    body{
+        background-color: #f2f6fc;
+        /* background-color: #1da1f5; */
+    }
+    .card{
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.151);
+    
+    }
+    label{
+        font-weight:500;
+    }
+    .card-header{
+        font-weight:bold;
+    }
+    .bt1{
+    /* background-color:#00ccff; */
+    background-color:#00e6ac;
+    color:#fff;
+}
+.bt1:hover{
+color:#fff;
+}

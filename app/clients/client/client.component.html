@@ -1,0 +1,87 @@
+<div class="container">
+    <form #addclient="ngForm" (ngSubmit)="submitUser(addclient.value)" class="sign-up-form">
+    <div class="col-md-10" style="margin-left: 90px;">
+        <div style="border-radius: 10px; margin: 10px;"  class="card">
+            <div style="background-color:aquamarine;color:#fff"  class="card-header fs-5">
+               
+ 
+               Client Form
+            </div>
+            <div class="card-body">
+                
+              
+        <div class="mt-3 mb-3 row">
+           
+            <div class="col-md-12">
+                <!-- <b><h2 for="Client" class="text-center">Client</h2></b> -->
+                <!-- <div class="form-group row"> -->
+                <label for="company" class="form-label">Client Name</label>
+                <input type="text" name="companyName"class="form-control"  id="companyName"  ngModel placeholder="Enter the name of your company" required>
+            <!-- </div> -->
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <div class="col-md-6 mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" id="email"  placeholder="Enter your email" ngModel required>
+            </div>
+            <div class="col-md-6">
+                <label for="contact" class="form-label">Contact number</label>
+                <input type="tel"  name="contactNumber" class="form-control" pattern="[0-9]{10}" id="contact"  placeholder="Enter your contact number" ngModel required>
+            </div>
+          </div>
+        <div class="row">
+              <div class="col-md-12">
+                  <label for="address" class="form-label">Address</label>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="line1" class="form-label">Line1</label>
+                <input type="text" name="line1" id="line1" class="form-control" ngModel required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="line2" class="form-label">Line2</label>
+                <input type="text"name="line2" id="line2" ngModel class="form-control" ngModel required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="landmark" class="form-label">Landmark</label>
+                <input type="text" name="landmark" id="Landmark" class="form-control" placeholder="Enter your landmark" ngModel >
+              </div>
+              <div class="col-md-6">
+                  <label for="city" class="form-label">City</label>
+                  <input type="text" name="city" id="city" class="form-control" placeholder="Enter city" ngModel  required>
+              </div>
+              <div class="col-md-4 mb-3">
+                  <label for="pincode" class="form-label">Pincode</label>
+                  <input type="number" name="pincode" id="Pincode" pattern="[0-9]{6}" class="form-control" placeholder="Enter pincode"ngModel required>
+              </div>
+              <div class="col-md-4 mb-3">
+                  <label for="state" class="form-label">State</label>
+              <select required  name="state" id="state" class="form-select" ngModel placeholder="select"><option class="a-prompt" value="">Select state</option><option value="ANDAMAN &amp; NICOBAR ISLANDS">ANDAMAN &amp; NICOBAR ISLANDS</option><option value="ANDHRA PRADESH">ANDHRA PRADESH</option><option value="ARUNACHAL PRADESH">ARUNACHAL PRADESH</option><option value="ASSAM">ASSAM</option><option value="BIHAR">BIHAR</option><option value="CHANDIGARH">CHANDIGARH</option><option value="CHHATTISGARH">CHHATTISGARH</option><option value="DADRA &amp; NAGAR HAVELI">DADRA &amp; NAGAR HAVELI</option><option value="DAMAN &amp; DIU">DAMAN &amp; DIU</option><option value="DELHI">DELHI</option><option value="GOA">GOA</option><option value="GUJARAT">GUJARAT</option><option value="HARYANA">HARYANA</option><option value="HIMACHAL PRADESH">HIMACHAL PRADESH</option><option value="JAMMU &amp; KASHMIR">JAMMU &amp; KASHMIR</option><option value="JHARKHAND">JHARKHAND</option><option value="KARNATAKA">KARNATAKA</option><option value="KERALA">KERALA</option><option value="LAKSHADWEEP">LAKSHADWEEP</option><option value="MADHYA PRADESH">MADHYA PRADESH</option><option value="MAHARASHTRA">MAHARASHTRA</option><option value="MANIPUR">MANIPUR</option><option value="MEGHALAYA">MEGHALAYA</option><option value="MIZORAM">MIZORAM</option><option value="NAGALAND">NAGALAND</option><option value="ODISHA">ODISHA</option><option value="PUDUCHERRY">PUDUCHERRY</option><option value="PUNJAB">PUNJAB</option><option value="RAJASTHAN">RAJASTHAN</option><option value="SIKKIM">SIKKIM</option><option value="TAMIL NADU">TAMIL NADU</option><option value="TELANGANA">TELANGANA</option><option value="TRIPURA">TRIPURA</option><option value="UTTAR PRADESH">UTTAR PRADESH</option><option value="UTTARAKHAND">UTTARAKHAND</option><option value="WEST BENGAL">WEST BENGAL</option></select>
+              </div> 
+            
+            <div class="col-md-6 mb-3">
+                <label for="gst" class="form-label">GST number</label>
+                <input type="text" name="gstNumber" id="GST" class="form-control"ngModel  pattern="[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}" placeholder="Enter GST number" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="pan" class="form-label">PAN number</label>
+                <input type="text" name="panNumber" id="Pan" class="form-control"ngModel  pattern="([a-zA-Z]){5}[0-9]){4}([a-zA-Z]){1}" placeholder="Enter pan number" required>
+              </div>
+              <div class="col-md-12 ">
+                <label for="website" class="form-label">Website</label>
+                <input type="website"name="website" class="form-control" id="website" ngModel  placeholder="Enter your Website" required>
+            </div>
+              
+        
+            <div class="row mt-5">
+                <div align="right" class="col-md-12 mb-3">
+                    <button href="" style="width:150px" type="submit" class="btn bt1">Save</button>
+                </div>
+            </div>
+        </div>
+    
+</div>
+</div>
+</div>
+</form>
+</div>
